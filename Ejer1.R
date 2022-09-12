@@ -34,8 +34,8 @@ freqRelativeAcum <- function(freqRel) {
   return(cumsum(freqRel))
 }
   
-#Tabla completa sin freqRelativeAcum
-tabla <- function(tab) {
+#Tabla completa(datos cualitativos) sin freqRelativeAcum 
+tablaCual <- function(tab) {
   return(fdt_cat(tab))
 }
 
@@ -59,5 +59,4 @@ med <- function(tab) {
   return(median(tab))
 }
 
-meanFuction(freqAbsolut(colorsFav))
 
