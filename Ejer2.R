@@ -4,27 +4,24 @@
 autosV <- c(0, 1, 2, 1, 2, 0, 3, 2, 4, 0, 4, 2, 1, 0, 3, 0, 0, 3, 4, 2, 0, 1, 1, 3, 0, 1, 2, 1, 2, 3)
 
 autos <- c(2, 3, 3, 4, 5, 5, 7, 7, 7, 8, 8, 9, 9, 9, 9, 11, 11, 11, 11, 12, 12, 13, 15, 15, 15, 18, 18, 18, 19, 19, 19, 19, 20, 20, 22, 23, 24, 24, 24, 26, 27, 27, 28, 29, 29, 30, 30, 30)
-table(autos)
 
-#Agrupo los datos
+#Calculo la frecuencia absoluta (fi)
+freqAbsAgrup(autos, K(autos))
 
-#Rango
-rango <- range(autos)
-R <- diff(rango)
-R
+#Calculo la frecuencia absoluta acumulada (Fa)
+freqAbsAcumlada(freqAbsAgrup(autos, K(autos)))
 
-#Numero de intervalos
-K <- round(1 + (3.3 * log10(length(autos))))
-K
+#Calculo la frecuencia relativa
+freqRelativaAgrup(freqAbsAgrup(autos, K(autos)), autos)
 
-#Longitud de intervalos
-longIntervalos <- round(R/K)
-longIntervalos
+#Calculo la frecuencia reñativa acumulada
+freqRelativAcumulada(freqRelativaAgrup(freqAbsAgrup(autos, K(autos)), autos))
 
-#Frecuencia absoluta(fi)
-frecuenciaAbsoluta()
+#Calculo la media
+media(autos)
 
-#tabla de frecuencia
-tabla.intervalos <- transform(table(cut(autos, breaks = K)))
-tabla.intervalos
+#Calculo la moda
+modaCuant(autos)
 
+#Calculo la mediana
+mediana(autos)

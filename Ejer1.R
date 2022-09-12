@@ -1,8 +1,5 @@
 #Ejercicio 1
 
-#importo librerias
-library(fdth)
-
 #Almaceno los datos en la variable colorsFav
 colorsFav <- c('negro', 'azul', 'amarillo', 'rojo', 'azul',
                'azul', 'rojo', 'negro', 'amarillo', 'rojo',
@@ -14,49 +11,25 @@ colorsFavCuant <- c(1, 2, 3, 4, 2,
                    4, 3, 3, 2, 4,
                    1, 2, 4, 1, 3)
 
-#Frecuencia Absolutas
-freqAbsolut <- function(tab) {
-  return(table(tab))
-}
+#Calculamos la frecuencia absoluta
+freqAbs(colorsFav)
 
-#Frecuencia Relativa
-freqRelativ <- function(freqAbs) {
-  return(prop.table(freqAbs))
-} 
+#Calculamos la frecuencia relativa
+freqRelativa(freqAbs(colorsFav))
 
-#Frecuencia Absoluta Acumulada
-freqAbsolutAcum <- function(freqAbs) {
-  return(cumsum(freqAbs)) 
-}
+#Calculamos la frecuencia absoluta acumulada
+freqAbsAcumlada(freqAbs(colorsFav))
 
-#Frecuencia Relativa Acumulada
-freqRelativeAcum <- function(freqRel) {
-  return(cumsum(freqRel))
-}
-  
-#Tabla completa(datos cualitativos) sin freqRelativeAcum 
-tablaCual <- function(tab) {
-  return(fdt_cat(tab))
-}
+#Calculamos la frecuencia relativa acumulada
+freqRelativAcumulada(freqRelativa(freqAbs(colorsFav)))
 
-#Media
-means <- function(tab){  
-  return(mean(tab))
-}
+#Calculamos la Media
+media(colorsFavCuant)
 
-#Moda culitativo
-modCualit <- function(tab) {
-  return(names(which.max(table(tab))))
-}
+#Calculamos la moda cualitativa
+modCualit(colorsFav)
 
-#Moda cuantitativo
-modCuant <- function(tab) {
-  return(as.numeric(which.max(table(tab))))
-}
-
-#Mediana
-med <- function(tab) {
-  return(median(tab))
-}
+#Calculamos la mediana
+mediana(colorsFavCuant)
 
 
